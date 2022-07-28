@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body > p{
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <p>
+        <label for="ipais">Que país você mora?</label> 
+        <input type="text" name="pais" id="ipais" autocomplete="off">
+        <input type="submit" value="Enviar" onclick="verificador()">
+    </p>
+    <p id="localizador"></p>
+    <p id="definidor"></p>
+
+    <script>
+        function verificador(){
+            var dado = window.document.querySelector('#ipais')
+            var localidade = dado.value
+            var frase1 = window.document.querySelector('#localizador')
+            frase1.innerHTML= `Você é do(s) ${localidade}`
+            var frase2 = window.document.querySelector('#definidor')
+            if(localidade == 'Brasil'){
+                frase2.innerHTML= 'Você é Brasileiro'
+            } else if(localidade == 'EUA'){
+                frase2.innerHTML= 'Você é Americano'
+            } else{
+                frase2.innerHTML= 'Você é Estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>

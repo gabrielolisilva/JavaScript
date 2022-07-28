@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Valor Hora</title>
+</head>
+<body>
+    <h1 class="tituloP">Olá!!</h1>
+
+    <p>Salário Mensal: 
+        <input type="number" name="salario" id="isalario">
+    </p>
+    <p>Horas Mensais: 
+        <input type="number" name="horas" id="ihoras">
+    </p>
+    <input type="submit" value="Calcular" onclick="calcular()">
+
+    <p>Resultado</p>
+
+    <script>
+        //Pega o nome inserido no prompt e transforma o que está escrito no <h1>
+        var nome = window.prompt('Olá, Qual seu nome?')
+        var tituloPrincipal = window.document.getElementsByClassName('tituloP')[0]
+        tituloPrincipal.innerHTML = (`Olá ${nome}, <br> Seja muito bem-vinda(o) !!`)
+
+        //pegar os dois inputs e coloca dentro de variáveis, guarda os valores numéricos em outras duas variáveis, faz o calculo, pega um dos parágrafos e colocar um nome com o resultado
+        function calcular(){
+            var dado1 = window.document.querySelector('#isalario')
+            var dado2 = window.document.querySelector('#ihoras')
+            var valorSalario = Number(dado1.value)
+            var numeroHoras = Number(dado2.value)
+            var resul = valorSalario / numeroHoras
+            var escrever = window.document.getElementsByTagName('p')[2]
+            escrever.innerHTML = (`${nome}. Seu valor por hora é de: <strong>${resul}</strong>`)
+        }
+    </script>
+</body>
+</html>

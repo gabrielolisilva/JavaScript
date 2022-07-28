@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+
+    <p>
+        <label for="ivel">Velocidade do Carro:</label> 
+        <input type="number" name="vel" id="ivel">
+        <input type="submit" value="Verificar" onclick="verificador()">
+    </p>
+    <p class="resul"></p>
+    <p class="nota"></p>
+    <p class="segurança"></p>
+
+    <script>
+        function verificador(){
+            var dado = window.document.querySelector('#ivel')
+            var valorVelocidade = Number(dado.value)
+            var resultadoEscrito = window.document.querySelector('.resul')
+            resultadoEscrito.innerHTML= `Sua velocidade atual é de <strong>${valorVelocidade}Km/h</strong>`
+            var paragrafoCondição = window.document.querySelector('.nota')
+            if(valorVelocidade >= 90){
+                paragrafoCondição.innerHTML= 'Sua velocidade está acima do permitido, você foi <strong>MULTADO</strong>'
+            } else{
+                paragrafoCondição.innerHTML= 'Você está abaixo da velocidade, PARABÉNS'
+            }
+            var avisoSegurança = window.document.querySelector('.segurança')
+            avisoSegurança.innerHTML= 'Dirija sempre com cinto de segurança!!!'
+        }
+    </script>
+</body>
+</html>

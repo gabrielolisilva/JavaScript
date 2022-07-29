@@ -25,11 +25,26 @@ function verificador(){
             img.setAttribute('src', 'imagens/adolescente-m.jpg')
         } else if(idade < 50){
             //adulto
+            img.setAttribute('src', 'imagens/adulto-m.jpg')
         } else{
             //idoso
+            img.setAttribute('src', 'imagens/idoso-m.jpg')
         }
     } else if(fsex[1].checked){
         genero = 'Mulher'
+        if(idade >= 0 && idade < 10){
+            //criança
+            img.setAttribute('src', 'imagens/crianca-f.jpg')
+        } else if(idade >=10 && idade < 21){
+            //adolescente
+            img.setAttribute('src', 'imagens/adolescente-f.jpg')
+        } else if(idade < 50){
+            //adulto
+            img.setAttribute('src', 'imagens/adulto-f.jpg')
+        } else{
+            //idoso
+            img.setAttribute('src', 'imagens/idoso-f.jpg')
+        }
     }
     textoAlterado.style.textAlign= 'center'
     textoAlterado.innerHTML= `Detectamos 
